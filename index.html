@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Pegada Ecológica</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        function calcularPegada() {
+            
+            var consumoEnergia = parseFloat(document.getElementById("consumoEnergia").value);
+            var consumoAgua = parseFloat(document.getElementById("consumoAgua").value);
+            var emissaoCarbono = parseFloat(document.getElementById("emissaoCarbono").value);
+            var quantidadeResiduos = parseFloat(document.getElementById("quantidadeResiduos").value);
+
+          
+            var pegada = consumoEnergia + consumoAgua + emissaoCarbono + quantidadeResiduos;
+
+            
+            document.getElementById("resultado").innerHTML = "Sua pegada ecológica é: " + pegada;
+        }
+    </script>
+</head>
+
+
+
+<body>
+
+    <h1 style="text-align: center;">Calculadora de Pegada Ecologica</h1>
+
+    <form>
+
+
+
+    <div style="text-align: center;">   
+    <label class = "custom-label" for="consumoEnergia"><b>Consumo de Energia:</b></label>
+    <input type="number" id="consumoEnergia" step="0.01"><br>
+    <button class="info-button" title="Energia em kW/hora"> 
+        ?
+      </button>  
+
+
+
+    <div style="text-align: center;">
+    <label class = "custom-label" for="consumoAgua"><b>Consumo de Água:</b></label>
+    <input type="number" id="consumoAgua" step="0.01"><br>
+    <div class="input-wrapper"></div>
+    <button class="info-button" title="Água em litros por mês ">
+        ?
+      </button>
+
+    <div style="text-align: center;">
+    <label class = "custom-label" for="emissaoCarbono"><b>Emissão de Carbono:</b></label>
+    <input type="number" id="emissaoCarbono" step="0.01"><br>
+    <div class="input-wrapper"></div>
+    <button class="info-button" title="Quantidade de combustível fóssil consumida no mês  ">
+        ?
+      </button>
+
+    <div style="text-align: center;">
+    <label class = "custom-label" for="quantidadeResiduos"><b>Quantidade de Resíduos:</b></label>
+    <input type="number" id="quantidadeResiduos" step="0.01"><br>
+    <div class="input-wrapper"></div>
+    <button class="info-button" title="Quantidade de lixo produzido no mês ">
+        ?
+      </button>
+    </div>
+
+       <br> <button type="button" onclick="calcularPegada()">Calcular</button>
+    </form>
+
+    <div id="resultado"></div>
+</body>
+</html>
